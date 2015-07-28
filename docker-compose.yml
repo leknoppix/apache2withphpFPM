@@ -10,7 +10,6 @@ web:
       - ALLOW_OVERRIDE=true
    links:
       - php:php
-      - db:db
 
 php:
    restart: always
