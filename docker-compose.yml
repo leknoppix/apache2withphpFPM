@@ -22,9 +22,19 @@ php:
       - db:db
 
 db:
- image: mysql
- restart: always
- volumes:
-  - /var/lib/boot2docker/mysql:/var/lib/mysql
- environment:
-  - MYSQL_ROOT_PASSWORD=root
+    image: mysql
+    restart: always
+    volumes:
+      - /var/docker/datamysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+
+phpmyadmin:
+   image: corbinu/docker-phpmyadmin
+   ports :
+      - "8080:80"
+   environment:
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=root
+   links:
+      - db:mysql
