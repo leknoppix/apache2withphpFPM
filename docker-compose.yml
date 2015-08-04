@@ -22,7 +22,7 @@ php:
       - mysqlserveur:mysql
 
 mysqlserveur:
-   image: mysql
+   image: mariadb
    restart: always
    volumes:
       - /var/docker/datamysql:/var/lib/mysql
