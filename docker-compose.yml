@@ -20,7 +20,6 @@ php:
       - /var/www:/var/www
    links:
       - mysqlserveur:mysql
-      - wkhtmltopdf:wkhtmltopdf
 
 mysqlserveur:
    image: mariadb
