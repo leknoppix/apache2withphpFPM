@@ -42,3 +42,9 @@ phpmyadmin:
       - MYSQL_PASSWORD=root
    links:
       - mysqlserveur:mysql
+
+wkhtmltopdf:
+   build: wkhtmltopdf
+   restart: always
+   ports:
+      - "5000:5000"
